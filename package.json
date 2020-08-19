@@ -5,6 +5,7 @@
   "author": "Jared Barron",
   "license": "none",
   "scripts": {
+    "start": "nodemon server/"
   },
   "dependencies": {
     "axios": "^0.19.2",
