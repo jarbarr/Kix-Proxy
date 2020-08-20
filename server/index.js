@@ -10,13 +10,10 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, '../client/dist')));
 
 app.get('/kix', (req, res) => {
-  // console.log(req);
   controller.getImageCarousel(req, (err, data) => {
     if (err) {
-      // console.log(err);
       res.send(err);
     } else {
-      // console.log(data);
       res.send(data);
     }
   });
@@ -24,10 +21,17 @@ app.get('/kix', (req, res) => {
 app.get('/sidebar/summary', (req, res) => {
   controller.getSidebarSummary(req, (err, data) => {
     if (err) {
-      console.log(err);
       res.send(err);
     } else {
-      // console.log(data);
+      res.send(data);
+    }
+  });
+});
+app.get('/api/reviews', (req, res) => {
+  controller.getReviews(req, (err, data) => {
+    if (err) {
+      res.send(err);
+    } else {
       res.send(data);
     }
   });
@@ -37,6 +41,26 @@ app.post('/kix', (req, res) => {
     if (err) {
       res.send(err);
     } else {
+      res.send(data);
+    }
+  });
+});
+app.post('/sidebar/summary', (req, res) => {
+  controller.querySidebar(req, (err, data) => {
+    if (err) {
+      res.send(err);
+    } else {
+      console.log('gotit', data);
+      res.send(data);
+    }
+  });
+});
+app.post('/api/reviews', (req, res) => {
+  controller.queryReviews(req, (err, data) => {
+    if (err) {
+      res.send(err);
+    } else {
+      console.log('gotit', data);
       res.send(data);
     }
   });
