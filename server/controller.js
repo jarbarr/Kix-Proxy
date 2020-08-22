@@ -3,12 +3,12 @@ const axios = require('axios');
 module.exports = {
   getImageCarousel: (request, callback) => {
     let options = {
-      url: 'http://localhost:3030/kix',
-      method: 'GET',
-      proxy: {
-        host: '127.0.0.1',
-        port: 5291
-      }
+      url: 'http://ec2-54-176-93-251.us-west-1.compute.amazonaws.com/kix',
+      method: 'GET'
+      // proxy: {
+      //   host: '127.0.0.1',
+      //   port: 5291
+      // }
     };
     axios(options)
       .then((response) => { callback(response.data); })
@@ -16,12 +16,12 @@ module.exports = {
   },
   getSidebarSummary: (request, callback) => {
     let options = {
-      url: 'http://localhost:5291/sidebar/summary',
-      method: 'GET',
-      proxy: {
-        host: '127.0.0.1',
-        port: 3380
-      }
+      url: 'http://54.176.46.102:3380/sidebar/summary',
+      method: 'GET'
+      // proxy: {
+      //   host: '127.0.0.1',
+      //   port: 3380
+      // }
     };
     axios(options)
       .then((response) => { callback(response.data); })
@@ -29,12 +29,12 @@ module.exports = {
   },
   getReviews: (request, callback) => {
     let options = {
-      url: 'http://localhost:5291/api/reviews',
-      method: 'GET',
-      proxy: {
-        host: '127.0.0.1',
-        port: 3001
-      }
+      url: 'http://52.14.202.194:3001/api/reviews',
+      method: 'GET'
+      // proxy: {
+      //   host: '127.0.0.1',
+      //   port: 3001
+      // }
     };
     axios(options)
       .then((response) => { callback(response.data); })
@@ -42,12 +42,12 @@ module.exports = {
   },
   queryShoeStyle: (request, callback) => {
     let options = {
-      url: 'http://localhost:3030/kix',
+      url: 'http://ec2-54-176-93-251.us-west-1.compute.amazonaws.com/kix',
       method: 'POST',
-      proxy: {
-        host: '127.0.0.1',
-        port: 5291
-      },
+      // proxy: {
+      //   host: '127.0.0.1',
+      //   port: 5291
+      // },
       data: request.body
     };
     axios(options)
@@ -56,12 +56,12 @@ module.exports = {
   },
   querySidebar: (request, callback) => {
     let options = {
-      url: 'http://localhost:5291/sidebar/summary',
+      url: 'http://54.176.46.102:3380/sidebar/summary',
       method: 'POST',
-      proxy: {
-        host: '127.0.0.1',
-        port: 3380
-      },
+      // proxy: {
+      //   host: '127.0.0.1',
+      //   port: 3380
+      // },
       data: request.body
     };
     axios(options)
@@ -70,12 +70,12 @@ module.exports = {
   },
   queryReviews: (request, callback) => {
     let options = {
-      url: 'http://localhost:5291//api/reviews',
+      url: 'http://52.14.202.194:3001/api/reviews',
       method: 'POST',
-      proxy: {
-        host: '127.0.0.1',
-        port: 3001
-      },
+      // proxy: {
+      //   host: '127.0.0.1',
+      //   port: 3001
+      // },
       data: request.body
     };
     axios(options)
